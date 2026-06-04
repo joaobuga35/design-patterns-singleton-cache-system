@@ -22,5 +22,12 @@ public class Main {
         System.out.println(singletonCache.getCache().get("singletonCache")); //Maria
         System.out.println(singletonCache2.getCache().get("singletonCache"));// Jose
 
+        System.out.println("USING SERVICE LOCATOR");
+        ServiceLocator serviceLocator = ServiceLocator.getInstance();
+        ServiceLocator serviceLocator2 = ServiceLocator.getInstance();
+        serviceLocator.register("service1", "Joao");
+        System.out.println(serviceLocator.getService("service1")); // Joao
+        System.out.println(serviceLocator2.getService("service1")); // Joao
+
     }
 }
